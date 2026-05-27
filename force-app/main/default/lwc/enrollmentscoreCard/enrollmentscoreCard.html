@@ -1,0 +1,47 @@
+<template>
+
+    <lightning-card title="Enrollment Score">
+
+        <template if:true={scoreData}>
+
+            <div class="slds-p-around_medium">
+
+                <lightning-badge
+                    label={priorityLabel}>
+                </lightning-badge>
+
+                <p>
+                    <strong>Score:</strong>
+                    {scoreData.Score__c}
+                </p>
+
+                <p>
+                    <strong>Recommended Action:</strong>
+                    {scoreData.Recommended_Action__c}
+                </p>
+
+                <p>
+                    <strong>Source:</strong>
+                    {scoreData.Source_System__c}
+                </p>
+
+                <p>
+                    <strong>Scored At:</strong>
+                    {scoreData.Scored_At__c}
+                </p>
+
+            </div>
+
+        </template>
+
+        <template if:false={scoreData}>
+
+            <div class="slds-p-around_medium">
+                No enrollment score available yet
+            </div>
+
+        </template>
+
+    </lightning-card>
+
+</template>
